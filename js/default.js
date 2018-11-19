@@ -11,7 +11,7 @@ var searate_time = function(time){
 var update = function(){
   var now = new Date();
   var counter = separate_time(now);
-  document.getElementById('countdown').textContent =
+  document.getElementById('contdown').textContent =
     '現在時刻は' +
     counter[5] + '年' +
     counter[4] + '月' +
@@ -23,6 +23,10 @@ var update = function(){
 }
 
 var refuresh= function(){
-  setTimeout(update, 1000);
+  setTimeout(update, 1000);//タイマーを起動
 }
 update();
+
+document.getElementById('form').select.onchange =function(){
+  location.href = document.getElementById('form').select.value;
+}
