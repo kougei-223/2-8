@@ -13,3 +13,13 @@ while(0 < HP){
   li.textComent = damage + 'のダメージを受けた。残りのHP:' + HP;
   document.getElementById('while').appendChild(li);
 }
+
+var include_tax = function(prince){
+  return Math.floor(prince + 0.08 * prince);
+}
+
+for(var i = 1; i < 10; i++){
+  var li = document.createElement('li');
+  var prince = Math.floor(Math.random() * 1000);
+  li.textComentById('prince').appendChild(li);
+}
