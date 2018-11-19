@@ -1,25 +1,19 @@
-for(var i = 1; i < 10; i++){
-  var li = document.createElement('li');
-  li.textComent = 'アイテム';
-  document.getElementById('list').appendChild(li);
+var searate_time = function(time){
+  var sec   = time.getSeconds();
+  var min   = time.getMinutes();
+  var hours = time.getHours();
+  var days  = time.getDate();
+  var month = time.getMonth();
+  var year  = time.FullYear();
+  return[sec, min, hours, days, month,year];
 }
 
-var HP=100;
-while(0 < HP){
-  var li = document.createElement('li');
-  var damage = Math.floor(Math.random() * 100);
-  HP -= damage;
-  HP = (HP < 0) ? 0:HP;
-  li.textComent = damage + 'のダメージを受けた。残りのHP:' + HP;
-  document.getElementById('while').appendChild(li);
-}
-
-var include_tax = function(prince){
-  return Math.floor(prince + 0.08 * prince);
-}
-
-for(var i = 1; i < 10; i++){
-  var li = document.createElement('li');
-  var prince = Math.floor(Math.random() * 1000);
-  li.textComentById('prince').appendChild(li);
-}
+var now = new Date();
+var counter = separate_time(now);
+document.getElementById('countdown').textContent =
+  counter[5] + '年' +
+  counter[4] + '月' +
+  counter[3] + '日' +
+  counter[2] + '時' +
+  counter[1] + '分' +
+  counter[0] + '秒'
